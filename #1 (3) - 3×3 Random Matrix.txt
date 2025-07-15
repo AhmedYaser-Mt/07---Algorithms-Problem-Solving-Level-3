@@ -1,0 +1,45 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+short RandomNumber(short From, short To)
+{
+	short RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void FillMatrixWithRandomNumber(short Arr[3][3], short Rows,short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			Arr[i][j] = RandomNumber(1, 100);
+		}
+	}
+}
+
+void PrintMatrix(short Arr[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			cout << setw(3) << Arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	short Array[3][3];
+	FillMatrixWithRandomNumber(Array, 3, 3);
+
+	cout << "The Following is a 3x3 Random Matrix :\n";
+	PrintMatrix(Array, 3, 3);
+
+	return 0;
+}

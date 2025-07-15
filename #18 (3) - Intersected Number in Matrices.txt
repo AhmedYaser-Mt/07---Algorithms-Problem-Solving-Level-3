@@ -1,0 +1,62 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void PrintMatrix(short Arr[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			printf("%0*d\t", 1, Arr[i][j]);
+		}
+		cout << endl;
+	}
+}
+
+bool IsNumberInMatrix(short Number, short Matrix1[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			if (Matrix1[i][j] == Number)
+				return 1;
+		}
+	}
+
+	return 0;
+}
+
+void PrintIntersectedNumbers(short Matrix1[3][3], short Matrix2[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			if (IsNumberInMatrix(Matrix1[i][j], Matrix2, 3, 3))
+			{
+				cout << Matrix1[i][j] << "\t";
+			}
+		}
+	}
+
+	cout << endl;
+}
+
+int main()
+{
+	short Matrix1[3][3] = { {77,5,12},{22,20,1},{1,0,9} };
+	short Matrix2[3][3] = { {5,80,90},{22,77,1},{10,8,33} };
+
+	cout << "\nMatrix 1 :\n";
+	PrintMatrix(Matrix1, 3, 3);
+
+	cout << "\nMatrix 2 :\n";
+	PrintMatrix(Matrix2, 3, 3);
+
+	cout << "\nIntersected Numbers are :\n\n";
+	PrintIntersectedNumbers(Matrix1, Matrix2, 3, 3);
+
+	return 0;
+}

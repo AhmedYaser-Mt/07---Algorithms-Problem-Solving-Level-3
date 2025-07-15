@@ -1,0 +1,31 @@
+#include<iostream>
+#include<cctype>
+using namespace std;
+
+string RemoveAllPuncuationsFromString(string S1)
+{
+	string S2 = "";
+
+	for (short i=0;i<S1.length();i++)
+	{
+		if (!ispunct(S1[i]))
+			S2 += S1[i];
+	}
+
+	return S2;
+}
+
+int main()
+{
+	string S1 = "My Name? is Ahmed Yaser,, I am 19 years old;; I am, learning C++\'\";,";
+
+	cout << "\nOriginal String :\n";
+	cout << S1 << endl;
+
+	cout << "\n\nPuncuations Removed :\n";
+	cout << RemoveAllPuncuationsFromString(S1) << endl;
+
+	
+
+	return 0;
+}

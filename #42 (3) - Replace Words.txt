@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+string ReplaceWordsInStringWithBuiltInFunction(string S1,string StringToReplace,string sReplaceTo)
+{
+	short pos = S1.find(StringToReplace);
+
+	while (pos != std::string::npos)
+	{
+		S1 = S1.replace(pos, StringToReplace.length(), sReplaceTo);
+
+		pos = S1.find(StringToReplace);
+	}
+
+	return S1;
+}
+
+int main()
+{
+	string S1 = "My Name is Ahmed Yaser";
+	string StringToReplace = "Ahmed";
+	string sReplaceTo = "Ammar";
+
+	cout << "\nOriginal String\n";
+	cout << S1 << endl;
+
+	cout << "\n\nString after Replace :\n";
+	cout << ReplaceWordsInString(S1, StringToReplace, sReplaceTo) << endl;
+
+	return 0;
+}

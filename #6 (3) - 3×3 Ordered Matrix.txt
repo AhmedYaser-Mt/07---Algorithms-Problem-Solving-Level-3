@@ -1,0 +1,40 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void FillMatrixWithOrderedNumbers(short Arr[3][3], short Rows, short Columns)
+{
+	short Counter = 1;
+
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			Arr[i][j] = Counter++;
+		}
+	}
+}
+
+void PrintMatrix(short Arr[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			cout << setw(3) << Arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+
+int main()
+{
+
+	short Array[3][3];
+	FillMatrixWithOrderedNumbers(Array, 3, 3);
+
+	cout << "The Following is a 3x3 Ordered Matrix :\n";
+	PrintMatrix(Array, 3, 3);
+
+	return 0;
+}

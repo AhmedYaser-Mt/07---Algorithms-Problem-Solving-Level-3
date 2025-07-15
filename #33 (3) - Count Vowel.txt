@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+#include<cctype>
+using namespace std;
+
+string ReadString()
+{
+	string Word;
+	cout << "Please enter yor string ?" << endl;
+	getline(cin, Word);
+	return Word;
+}
+
+bool IsVowel(char Ch1)
+{
+	Ch1 = tolower(Ch1);
+
+	return ((Ch1 == 'a') || (Ch1 == 'e') || (Ch1 == 'i') || (Ch1 == 'o') || (Ch1 == 'u'));
+}
+
+short CountVowels(string Word)
+{
+	short Counter = 0;
+
+	for (short i = 0;i < Word.length();i++)
+	{
+		if (IsVowel(Word[i]))
+			Counter++;
+	}
+
+	return Counter;
+}
+
+int main()
+{
+	string Word = ReadString();
+
+	cout << "\nNumber of Vowels is : " << CountVowels(Word) << endl;
+
+	return 0;
+}

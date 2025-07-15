@@ -1,0 +1,60 @@
+#include<iostream>
+#include<string>
+#include<cctype>
+using namespace std;
+
+string ReadString()
+{
+	string Word;
+	cout << "Please enter yor string ?" << endl;
+	getline(cin, Word);
+	return Word;
+}
+
+char ReadCharacter()
+{
+	char Character;
+	cout << "Please enter a Character ?" << endl;
+	cin >> Character;
+	return Character;
+}
+
+short CountLetter(string Word, char Character, bool MatchCase = true)
+{
+	short Counter = 0;
+
+	for (short i = 0;i < Word.length();i++)
+	{
+		if (MatchCase)
+		{
+			if (Word[i] == Character)
+				Counter++;
+		}
+		else
+		{
+			if (tolower(Word[i]) == tolower(Character))
+				Counter++;
+		}
+	}
+
+	return Counter;
+}
+
+char InvertLetterCase(char Character)
+{
+	return isupper(Character) ? tolower(Character) : toupper(Character);
+}
+
+int main()
+{
+	string Word = ReadString();
+	cout << endl;
+	char Character = ReadCharacter();
+
+	cout << "\nLetter \'" << Character << "\' Count = " << CountLetter(Word, Character) << endl;
+
+	cout << "Letter \'" << Character << "\' or \'"<< InvertLetterCase(Character) <<"\' Count = " 
+		<< CountLetter(Word, Character, false) << endl;
+	
+	return 0;
+}

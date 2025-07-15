@@ -1,0 +1,34 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+string ReadString()
+{
+	string Word;
+	cout << "Please enter yor string ?" << endl;
+	getline(cin, Word);
+	return Word;
+}
+
+void PrintFirstLetters(string Word)
+{
+	bool IsFirstLetter = true;
+
+	cout << "\nFirst Letters of this string :\n";
+
+	for (short i=0;i<Word.length();i++)
+	{
+		if (Word[i] != ' ' && IsFirstLetter)
+			cout << Word[i] << "\t";
+
+		IsFirstLetter = (Word[i] == ' '? true : false);
+	}
+	
+}
+
+int main()
+{
+	PrintFirstLetters(ReadString());
+	
+	return 0;
+}

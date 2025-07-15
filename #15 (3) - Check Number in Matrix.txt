@@ -1,0 +1,48 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void PrintMatrix(short Arr[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			printf("%0*d\t", 1, Arr[i][j]);
+		}
+		cout << endl;
+	}
+}
+
+short CountNumberInMatrix(short Number, short Matrix1[3][3], short Rows, short Columns)
+{
+	short NumberCount = 0;
+
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			if (Matrix1[i][j] == Number)
+				NumberCount++;
+		}
+	}
+
+	return NumberCount;
+}
+
+int main()
+{
+	short Matrix1[3][3] = { {2,0,0},{0,2,0},{0,0,2} };
+
+	cout << "\nMatrix 1 :\n";
+	PrintMatrix(Matrix1, 3, 3);
+
+	short Number ;
+	cout << "\nEnter the Number to Count in Matrix ? ";
+	cin >> Number;
+
+	cout << "\nNumber " << Number << " Count in Matrix is " 
+		<< CountNumberInMatrix(Number, Matrix1, 3, 3) << endl;
+
+	return 0;
+}

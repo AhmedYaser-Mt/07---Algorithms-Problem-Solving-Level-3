@@ -1,0 +1,43 @@
+#include<iostream>
+#include<string>
+#include<cctype>
+using namespace std;
+
+string ReadString()
+{
+	string Word;
+	cout << "Please enter yor string ?" << endl;
+	getline(cin, Word);
+	return Word;
+}
+
+char ReadCharacter()
+{
+	char Character;
+	cout << "Please enter a Character ?" << endl;
+	cin >> Character;
+	return Character;
+}
+
+short CountOneLetter(string Word, char Character)
+{
+	short Counter = 0;
+
+	for (short i = 0;i < Word.length();i++)
+	{
+		if (Word[i] == Character)
+			Counter++;
+	}
+
+	return Counter;
+}
+
+int main()
+{
+	string Word = ReadString();
+	char Character = ReadCharacter();
+
+	cout << "Letter \'" << Character << "\' Count = " << CountOneLetter(Word, Character) << endl;
+	
+	return 0;
+}

@@ -1,0 +1,92 @@
+#include<iostream>
+#include<vector>
+#include<string>
+#include<cctype>
+using namespace std;
+
+string JoinString(vector <string>& vString, string Delim)
+{
+	string S1 = "";
+
+	for (const string& Word : vString)
+	{
+		S1 += Word + Delim;
+	}
+
+	return (S1.substr(0, S1.length() - Delim.length()));
+}
+
+vector <string> SplitString(string S1, string delim)
+{
+	short pos = 0;
+	string sWord = "";
+	vector <string> vString;
+
+	while ((pos = S1.find(delim)) != std::string::npos)
+	{
+		sWord = S1.substr(0, pos);
+		if (sWord != "")
+		{
+			vString.push_back(sWord);
+		}
+
+		S1.erase(0, pos + delim.length());
+	}
+
+	if (S1 != "")
+	{
+		vString.push_back(S1);
+	}
+
+	return vString;
+}
+
+string LowerAllString(string Word)
+{
+	for (short i = 0;i < Word.length();i++)
+	{
+		if ((isupper(Word[i])))
+		{
+			Word[i] = tolower(Word[i]);
+		}
+	}
+
+	return Word;
+}
+
+string ReplaceWordInStringUsingSplit(string S1,string StringToReplace,string UpdateTo, bool Match = true)
+{
+	vector <string> vString = SplitString(S1, " ");
+
+	for (string &Word : vString)
+	{
+		if (Match)
+		{
+			if (Word == StringToReplace)
+				Word = UpdateTo;
+		}
+		else
+		{
+			if (LowerAllString(Word) == LowerAllString(StringToReplace))
+				Word = UpdateTo;
+		}
+	}
+
+	return JoinString(vString, " ");
+}
+
+int main()
+{
+	string S1 = "My Name is Ahmed Yaser";
+
+	cout << "\nOriginal String\n";
+	cout << S1 << endl;
+
+	cout << "\n\nReplace with Match case :\n";
+	cout << ReplaceWordInStringUsingSplit(S1,"ahmed","Ammar") << endl;
+
+	cout << "\n\nReplace with Dont Match case :\n";
+	cout << ReplaceWordInStringUsingSplit(S1, "ahmed", "Ammar",false) << endl;
+
+	return 0;
+}

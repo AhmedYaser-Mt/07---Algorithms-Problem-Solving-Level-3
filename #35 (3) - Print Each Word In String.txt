@@ -1,0 +1,40 @@
+#include<iostream>
+#include<string>
+#include<cctype>
+using namespace std;
+
+string ReadString()
+{
+	string Word;
+	cout << "Please enter yor string ?" << endl;
+	getline(cin, Word);
+	return Word;
+}
+
+void PrintEachWordInString(string S1)
+{
+	cout << "\nYour string Words are :\n\n";
+
+	string delim = " ";
+	short pos = 0;
+	string sWord = "";
+
+	while ((pos = S1.find(delim)) != std::string::npos)
+	{
+		sWord = S1.substr(0, pos);
+		if (sWord != "")
+			cout << sWord << endl;
+
+		S1.erase(0, pos + delim.length());
+	}
+
+	if (S1 != "")
+		cout << S1 << endl;
+}
+
+int main()
+{
+	PrintEachWordInString(ReadString());
+
+	return 0;
+}

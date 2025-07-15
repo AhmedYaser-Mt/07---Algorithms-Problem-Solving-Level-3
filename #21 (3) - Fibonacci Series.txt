@@ -1,0 +1,28 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void PrintFibonacciUsingLoop(short Length)
+{
+	short Prev2 = 0, Prev1 = 1, FebNumber=0;
+
+	cout << 1 << "\t";
+
+	for (short i=2;i<=Length;i++)
+	{
+		FebNumber = Prev1 + Prev2;
+
+		cout << FebNumber << "\t";
+
+		Prev2 = Prev1;
+		Prev1 = FebNumber;
+	}
+	cout << endl;
+}
+
+int main()
+{
+	PrintFibonacciUsingLoop(10);
+
+	return 0;
+}

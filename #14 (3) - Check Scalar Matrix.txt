@@ -1,0 +1,48 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void PrintMatrix(short Arr[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			printf("%0*d\t", 1, Arr[i][j]);
+		}
+		cout << endl;
+	}
+}
+
+bool IsScalarMatrix(short Matrix1[3][3], short Rows, short Columns)
+{
+	short FirstDiagonalElement = Matrix1[0][0];
+
+	for (short i=0;i<Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			if (i == j && Matrix1[i][j] != FirstDiagonalElement)
+				return 0;
+			else if (i != j && Matrix1[i][j] != 0)
+				return 0;
+		}
+	}
+
+	return 1;
+}
+
+int main()
+{
+	short Matrix1[3][3] = { {2,0,0},{0,2,0},{0,0,2} };
+
+	cout << "\nMatrix 1 :\n";
+	PrintMatrix(Matrix1, 3, 3);
+
+	if (IsScalarMatrix(Matrix1, 3, 3))
+		cout << "\nYes: Matrix is Scalar\n";
+	else
+		cout << "\nNo: Matrix is Not Scalar\n";
+
+	return 0;
+}

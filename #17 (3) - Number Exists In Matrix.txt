@@ -1,0 +1,48 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void PrintMatrix(short Arr[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			printf("%0*d\t", 1, Arr[i][j]);
+		}
+		cout << endl;
+	}
+}
+
+bool IsNumberInMatrix(short Number, short Matrix1[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			if (Matrix1[i][j] == Number)
+				return 1;
+		}
+	}
+
+	return 0;
+}
+
+int main()
+{
+	short Matrix1[3][3] = { {77,5,12},{22,20,1},{1,0,9} };
+
+	cout << "\nMatrix 1 :\n";
+	PrintMatrix(Matrix1, 3, 3);
+
+	short Number;
+	cout << "\nPlease Enter the Number to look for in Matrix ? ";
+	cin >> Number;
+
+	if (IsNumberInMatrix(Number, Matrix1, 3, 3))
+		cout << "\nYes it is there.\n";
+	else
+		cout << "\nNo it is Not there.\n";
+
+	return 0;
+}

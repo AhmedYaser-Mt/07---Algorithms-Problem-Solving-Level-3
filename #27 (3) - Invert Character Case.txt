@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cctype>
+using namespace std;
+
+char ReadCharacter()
+{
+	char Character;
+	cout << "Please enter a Character ?" << endl;
+	cin >> Character;
+	return Character;
+}
+
+char InvertLetterCase(char Character)
+{
+	return isupper(Character) ? tolower(Character) : toupper(Character);
+}
+
+int main()
+{
+	char Character = ReadCharacter();
+
+	cout << "\nCharacter After Inverting Case :\n";
+	Character = InvertLetterCase(Character);
+	cout << Character << endl;
+	
+	return 0;
+}

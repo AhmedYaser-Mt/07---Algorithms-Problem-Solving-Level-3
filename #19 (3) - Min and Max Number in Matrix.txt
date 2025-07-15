@@ -1,0 +1,61 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void PrintMatrix(short Arr[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			printf("%0*d\t", 1, Arr[i][j]);
+		}
+		cout << endl;
+	}
+}
+
+short MinNumberInMatrix(short Matrix1[3][3], short Rows, short Columns)
+{
+	short MinNumber = Matrix1[0][0];
+
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			if (Matrix1[i][j] < MinNumber)
+				MinNumber = Matrix1[i][j];
+		}
+	}
+
+	return MinNumber;
+}
+
+short MaxNumberInMatrix(short Matrix1[3][3], short Rows, short Columns)
+{
+	short MaxNumber = Matrix1[0][0];
+
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			if (Matrix1[i][j] > MaxNumber)
+				MaxNumber = Matrix1[i][j];
+		}
+	}
+
+	return MaxNumber;
+}
+
+int main()
+{
+	short Matrix1[3][3] = { {77,5,12},{22,20,6},{14,3,9} };
+
+	cout << "\nMatrix 1 :\n";
+	PrintMatrix(Matrix1, 3, 3);
+
+	cout << "\nMinimum Numbers is : " << MinNumberInMatrix(Matrix1, 3, 3) << endl;
+	
+	cout << "\nMaximum Numbers is : " << MaxNumberInMatrix(Matrix1, 3, 3) << endl;
+
+	return 0;
+}

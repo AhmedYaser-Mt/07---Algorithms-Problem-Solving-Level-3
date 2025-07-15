@@ -1,0 +1,46 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void PrintMatrix(short Arr[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			printf("%0*d\t", 1, Arr[i][j]);
+		}
+		cout << endl;
+	}
+}
+
+bool IsIdentityMatrix(short Matrix1[3][3], short Rows, short Columns)
+{
+	for (short i=0;i<Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			if (i == j && Matrix1[i][j] != 1)
+				return 0;
+			else if (i != j && Matrix1[i][j] != 0)
+				return 0;
+		}
+	}
+
+	return 1;
+}
+
+int main()
+{
+	short Matrix1[3][3] = { {1,0,0},{0,1,0},{0,0,1} };
+
+	cout << "\nMatrix 1 :\n";
+	PrintMatrix(Matrix1, 3, 3);
+
+	if (IsIdentityMatrix(Matrix1, 3, 3))
+		cout << "\nYes: Matrix is Identity\n";
+	else
+		cout << "\nNo: Matrix is Not Identity\n";
+
+	return 0;
+}

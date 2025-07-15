@@ -1,0 +1,74 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+short RandomNumber(short From, short To)
+{
+	short RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void FillMatrixWithRandomNumbers(short Arr[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			Arr[i][j] = RandomNumber(1,10);
+		}
+	}
+}
+
+void PrintMatrix(short Arr[3][3], short Rows, short Columns)
+{
+	for (short i = 0;i < Rows;i++)
+	{
+		for (short j = 0;j < Columns;j++)
+		{
+			printf("%0*d\t", 2, Arr[i][j]);
+		}
+		cout << endl;
+	}
+}
+
+short SumOfMatrix(short Matrix1[3][3], short Rows, short Columns)
+{
+	short SumMatrix = 0;
+
+	for (short i=0;i<Rows;i++)
+	{
+		for (short j = 0;j < Rows;j++)
+		{
+			SumMatrix += Matrix1[i][j];
+		}
+	}
+
+	return SumMatrix;
+}
+
+bool AreEqualMatrices(short Matrix1[3][3], short Matrix2[3][3], short Rows, short Columns)
+{
+	return (SumOfMatrix(Matrix1,3,3) == SumOfMatrix(Matrix2, 3, 3));
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	short Matrix1[3][3], Matrix2[3][3];
+	FillMatrixWithRandomNumbers(Matrix1, 3, 3);
+	FillMatrixWithRandomNumbers(Matrix2, 3, 3);
+
+	cout << "Matrix 1 :\n";
+	PrintMatrix(Matrix1, 3, 3);
+
+	cout << "Matrix 2 :\n";
+	PrintMatrix(Matrix2, 3, 3);
+
+	if (AreEqualMatrices(Matrix1, Matrix2, 3, 3))
+		cout << "\nYes: both Matrices are Equal\n";
+	else
+		cout << "\nNo: Matrices are Not Equal\n";
+
+	return 0;
+}

@@ -1,0 +1,55 @@
+#include<iostream>
+#include<string>
+#include<cctype>
+using namespace std;
+
+string ReadString()
+{
+	string Word;
+	cout << "Please enter yor string ?" << endl;
+	getline(cin, Word);
+	return Word;
+}
+
+string UpperAllSrting(string Word)
+{
+	for (short i=0;i<Word.length();i++)
+	{
+		if ((islower(Word[i])))
+		{
+			Word[i] = toupper(Word[i]);
+		}
+	}
+	
+	return Word;
+}
+
+string LowerAllString(string Word)
+{
+	for (short i = 0;i < Word.length();i++)
+	{
+		if ((isupper(Word[i])))
+		{
+			Word[i] = tolower(Word[i]);
+		}
+	}
+
+	return Word;
+}
+
+int main()
+{
+	string Word = ReadString();
+
+
+	cout << "\nString After Upper :\n";
+	Word = UpperAllSrting(Word);
+	cout << Word << endl;
+
+
+	cout << "\nString After Lower :\n";
+	Word = LowerAllString(Word);
+	cout << Word << endl;
+	
+	return 0;
+}

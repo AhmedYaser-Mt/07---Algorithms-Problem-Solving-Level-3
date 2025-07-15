@@ -1,0 +1,78 @@
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+
+struct sClient
+{
+	string AccountNumber = "";
+	string PinCode = "";
+	string Name = "";
+	string Phone = "";
+	double AccountBalance = 0.0;
+};
+
+vector <string> SplitString(string S1, string delim)
+{
+	short pos = 0;
+	string sWord = "";
+	vector <string> vString;
+
+	while ((pos = S1.find(delim)) != std::string::npos)
+	{
+		sWord = S1.substr(0, pos);
+		if (sWord != "")
+		{
+			vString.push_back(sWord);
+		}
+
+		S1.erase(0, pos + delim.length());
+	}
+
+	if (S1 != "")
+	{
+		vString.push_back(S1);
+	}
+
+	return vString;
+}
+
+sClient ConvertLineToRecord(string LineRecord, string Seperator = "#//#")
+{
+	sClient Client;
+
+	vector <string> vClientData = SplitString(LineRecord, Seperator);
+
+	Client.AccountNumber = vClientData[0];
+	Client.PinCode = vClientData[1];
+	Client.Name = vClientData[2];
+	Client.Phone = vClientData[3];
+	Client.AccountBalance = stod(vClientData[4]);
+
+	return Client;
+}
+
+void PrintClientRecord(sClient & Client)
+{
+	cout << "The Following is the extracted client record :\n\n";
+
+	cout << "Account Number  : " << Client.AccountNumber << endl;
+	cout << "Pin Code        : " << Client.PinCode << endl;
+	cout << "Name            : " << Client.Name << endl;
+	cout << "Phone           : " << Client.Phone << endl;
+	cout << "Account Balance : " << Client.AccountBalance << endl << endl;
+}
+
+int main()
+{	
+	string stLine = "A150#//#1234#//#Ahmed Yaser#//#01014842264#//#5270.000000";
+
+	cout << "Line Record is :\n";
+	cout << stLine << endl << endl;
+
+	sClient Client = ConvertLineToRecord(stLine);
+
+	PrintClientRecord(Client);
+
+	return 0;
+}

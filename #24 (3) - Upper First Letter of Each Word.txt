@@ -1,0 +1,40 @@
+#include<iostream>
+#include<string>
+#include<cctype>
+using namespace std;
+
+string ReadString()
+{
+	string Word;
+	cout << "Please enter yor string ?" << endl;
+	getline(cin, Word);
+	return Word;
+}
+
+string UpperFirstLetterOfEachWord(string Word)
+{
+	bool IsFirstLetter = true;
+
+	for (short i=0;i<Word.length();i++)
+	{
+		if ((Word[i] != ' ' && IsFirstLetter) && (islower(Word[i])))
+		{
+			Word[i] = toupper(Word[i]);
+		}
+
+		IsFirstLetter = (Word[i] == ' '? true : false);
+	}
+	
+	return Word;
+}
+
+int main()
+{
+	string Word = ReadString();
+
+	cout << "\nString After Conversion :\n";
+	Word = UpperFirstLetterOfEachWord(Word);
+	cout << Word << endl;
+	
+	return 0;
+}

@@ -1,0 +1,66 @@
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+
+string ReadString()
+{
+	string Word;
+	cout << "Please enter yor string ?" << endl;
+	getline(cin, Word);
+	return Word;
+}
+
+vector <string> SplitString(string S1, string delim)
+{
+	short pos = 0;
+	string sWord = "";
+	vector <string> vString;
+
+	while ((pos = S1.find(delim)) != std::string::npos)
+	{
+		sWord = S1.substr(0, pos);
+		if (sWord != "")
+		{
+			vString.push_back(sWord);
+		}
+
+		S1.erase(0, pos + delim.length());
+	}
+
+	if (S1 != "")
+	{
+		vString.push_back(S1);
+	}
+
+	return vString;
+}
+
+string ReverseWordsInString(string S1)
+{
+	vector <string> vString = SplitString(S1, " ");
+
+	string S2 = "";
+
+	vector <string>::iterator iter = vString.end();
+
+	while (iter != vString.begin())
+	{
+		--iter;
+
+		S2 += *iter + " ";
+	}
+
+	S2 = S2.substr(0, S2.length() - 1);
+	return S2;
+}
+
+int main()
+{
+	string S1 = ReadString();
+
+	cout << "\n\nString after Reversing words :\n";
+	cout << ReverseWordsInString(S1) << endl;
+
+	return 0;
+}
