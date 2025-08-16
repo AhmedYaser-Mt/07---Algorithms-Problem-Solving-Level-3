@@ -1,6 +1,6 @@
 # 📘 07 - Algorithms & Problem-Solving – Level 3 (Programming Advices)
 
-🎉 I’m excited to share that I’ve completed the **07 – Algorithms & Problem Solving Level 3** course from **Programming Advices**, taught by **Dr. Mohamed Abou Hadhoud**. 🏆  
+🎉 I’m excited to share that I’ve completed the **07 – Algorithms & Problem Solving Level 3** course from [AbouHadhood Platform](https://programmingadvices.com/). 🏆  
 
 This repository contains **50 solved problems** from this level, each crafted to strengthen logical thinking, problem decomposition, and an efficiency mindset.
 
