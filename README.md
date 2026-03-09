@@ -2,43 +2,39 @@
 
 🎉 I’m excited to share that I’ve completed the **07 – Algorithms & Problem Solving Level 3** course from [AbouHadhood Platform](https://programmingadvices.com/). 🏆  
 
-This repository contains **50 solved problems** from this level, each crafted to strengthen logical thinking, problem decomposition, and an efficiency mindset.
+This repository contains **51 solved problems** from this level, designed to strengthen logical thinking, problem decomposition, and efficient solution design.
 
 ---
 
 ## 🚀 Course Overview
-Level 3 in the Abu Hadhoud series further challenged my problem-solving skills.  
-The main focus was tackling **50 progressively challenging algorithmic problems**, each enhancing:
-- Logical structuring
-- Code efficiency
-- Reusable functions design
+Level 3 challenged my problem-solving skills with **more complex and realistic algorithmic problems**.  
+The main focus was tackling 51 progressively difficult problems that enhanced:  
+- Logical structuring and clarity  
+- Code efficiency and optimization  
+- Reusable function design  
+- Real-world problem-solving readiness  
+
+By practicing these problems, I improved my ability to **think algorithmically**, handle complexity, and structure solutions professionally.
 
 ---
 
 ## 💡 Key Highlights
-- 🔹 **Breaking down complex tasks** into clean, reusable functions—each with a single, well-defined purpose.
-- 🔹 Writing **optimised code** under real constraints, not just theoretical ones.
-- 🔹 Gaining valuable practice with **debugging**, edge cases, and performance considerations.
-- 🔹 Wrapping it all up with **two hands-on projects** that solidified learning and produced real-world-ready code.
-
----
-
+- 🔹 **Complex Problem Decomposition**: Breaking down challenging tasks into clean, reusable functions.  
+- 🔹 **Optimized Code**: Writing efficient solutions under realistic constraints.  
+- 🔹 **Debugging & Edge Case Practice**: Handling tricky scenarios and ensuring correctness.  
+- 🔹 **Projects Integration**: Two hands-on projects applying all concepts and providing practical coding experience.  
+- 🔹 **Advanced Structured Programming**: Deepening skills in C++ with emphasis on logic, arrays, matrices, and string manipulation.  
 
 ---
 
 ## 🛠 Technologies Used
-- **Language:** C++
-- **Paradigm:** Structured Programming
-- **Tools:** VS Code / Dev-C++, Git, GitHub
+- **Language:** C++  
+- **Paradigm:** Structured Programming  
+- **Tools:** VS Code / Dev-C++, Git, GitHub  
 
 ---
 
 ## 🔜 Next Steps
-After completing this level, I progressed to **08 - Algorithms & Problem Solving Level 4**, which introduced even more advanced problem sets and concepts.
+After completing this level, I advanced to **08 - Algorithms & Problem Solving Level 4**, where I tackled even more challenging algorithmic problems and real projects.
 
 ---
-
-## 📬 Connect
-- **GitHub:** [AhmedYaser-Mt](https://github.com/AhmedYaser-Mt)
-- **LinkedIn:** [Ahmed Yasser](https://www.linkedin.com/in/ahmed-yaser-mt)
-
